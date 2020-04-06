@@ -1,12 +1,13 @@
 package com.springboot.cloud.sysadmin.organization.entity.form;
 
-import com.springboot.cloud.common.core.entity.form.BaseForm;
+import com.springboot.cloud.common.web.entity.form.BaseForm;
 import com.springboot.cloud.sysadmin.organization.entity.po.Role;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import java.util.Set;
 
 @ApiModel
 @Data
@@ -22,4 +23,8 @@ public class RoleForm extends BaseForm<Role> {
 
     @ApiModelProperty(value = "角色描述")
     private String description;
+
+    @ApiModelProperty(value = "角色拥有的资源id列表")
+    private Set<String> resourceIds;
+
 }
